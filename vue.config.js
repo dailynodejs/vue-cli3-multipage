@@ -10,6 +10,7 @@ glob.sync(PAGES_PATH + '/*/main.js').forEach(filepath => {
 
   pages[pageName] = {
     entry: filepath,
+    template: path.dirname(filepath) + '/index.html',
     filename: `${pageName}.html`,
     chunks: ['chunk-vendors', 'chunk-common', pageName]
   }
@@ -18,6 +19,7 @@ console.log(pages)
 
 module.exports = {
   pages: pages,
+  productionSourceMap: false,
   devServer: {
     index: 'page1.html',
     open: process.platform === 'darwin'
