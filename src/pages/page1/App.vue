@@ -21,8 +21,10 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
+<style scoped>
 p {
   color: red;
+  font-size: 16px; /*px*/
+  height: 100px;
 }
 </style>
