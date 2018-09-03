@@ -21,6 +21,13 @@ module.exports = {
   pages: pages,
   productionSourceMap: false,
   chainWebpack: config => {
+
+    config.module
+      .rule('eslint')
+        .exclude
+          .add(/mock/)
+          .end()
+
     config.module
       .rule('css')
         .test(/\.css$/)
@@ -31,6 +38,12 @@ module.exports = {
           .options({
             remUnit: 75
           })
+
+    if (process.env.npm_config_report) {
+      config
+        .plugin('webpack-bundle-analyzer')
+        .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
+    }
   },
   devServer: {
     index: 'page1.html',

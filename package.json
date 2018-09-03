@@ -6,7 +6,8 @@
     "dev": "vue-cli-service serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "analyz": "npm_config_report=true npm run build"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -21,6 +22,7 @@
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
     "mockjs": "^1.0.1-beta3",
-    "vue-template-compiler": "^2.5.17"
+    "vue-template-compiler": "^2.5.17",
+    "webpack-bundle-analyzer": "^2.13.1"
   }
 }
