@@ -20,6 +20,7 @@ console.log(pages)
 module.exports = {
   pages: pages,
   productionSourceMap: false,
+  parallel: require('os').cpus().length > 1,
   chainWebpack: config => {
 
     config.module
